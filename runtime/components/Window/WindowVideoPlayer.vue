@@ -15,6 +15,10 @@ function loadVideoUrl(fileHandle) {
     return
   }
 
+  if (path.startsWith('http')) {
+    return path
+  }
+
   const buffer = fs.readFileSync(fileHandle)
   const blob = new Blob([buffer], { type: 'video/mp4' })
   return URL.createObjectURL(blob)

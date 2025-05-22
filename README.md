@@ -18,6 +18,16 @@ This app for Open Web Desktop provides a basic video player for the File System 
 owd install-app @owdproject/app-classic-videoplayer
 ```
 
+## Usage
+
+#### Available commands
+
+```
+classic-videoplayer <url>
+classic-videoplayer <url> --loop
+classic-videoplayer <url> --autoplay
+```
+
 ## License
 
 The application is released under the [MIT License](LICENSE).
