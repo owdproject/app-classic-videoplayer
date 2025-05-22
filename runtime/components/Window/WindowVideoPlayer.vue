@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { fs } from '@zenfs/core'
 import { useI18n } from 'vue-i18n'
+import { getFilename } from '@owdproject/module-fs/runtime/utils/utilFileSystem'
+import { ref } from 'vue'
 
 const props = defineProps<{
   window: Window
@@ -8,7 +10,10 @@ const props = defineProps<{
 
 const { t } = useI18n()
 
-const videoUrl = loadVideoUrl(props.window.meta.path)
+const filePath = loadVideoUrl(props.window.meta.path)
+const title = ref(getFilename(props.window.meta.path))
+
+props.window.setTitleOverride(title)
 
 function loadVideoUrl(pathString: string) {
   if (!pathString) {
@@ -54,7 +59,7 @@ function loadVideoUrl(pathString: string) {
 <template>
   <Window v-bind="$props">
     <video
-      :src="videoUrl"
+      :src="filePath"
       :controls="!props.window.meta.noControls"
       :autoplay="props.window.meta.autoplay"
       :loop="props.window.meta.loop"
@@ -64,6 +69,7 @@ function loadVideoUrl(pathString: string) {
 
 <style scoped lang="scss">
 video {
+  width: 100%;
   max-width: 60vw;
   max-height: 60vh;
 }
