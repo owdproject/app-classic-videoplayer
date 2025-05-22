@@ -12,7 +12,7 @@ export default {
       component: () => import('./components/Window/WindowVideoPlayer.vue'),
       resizable: true,
       size: {
-        width: 'auto',
+        width: '400px',
         height: 'auto',
       },
       position: {
