@@ -1,6 +1,6 @@
 {
   "name": "@owdproject/app-classic-videoplayer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Video Player for your Open Web Desktop client",
   "keywords": [
     "owd-client",
