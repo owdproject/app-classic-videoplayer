@@ -5,7 +5,7 @@ export default {
   icon: 'mdi:movie-open-outline',
   provides: {
     name: 'video-player',
-    command: 'classic-videoplayer',
+    entry: 'player',
   },
   windows: {
     main: {
@@ -20,6 +20,11 @@ export default {
         y: 240,
         z: 0,
       },
+    },
+  },
+  entries: {
+    player: {
+      command: 'classic-videoplayer',
     },
   },
   commands: {
