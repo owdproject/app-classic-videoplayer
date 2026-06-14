@@ -57,14 +57,14 @@ function loadVideoUrl(pathString: string) {
 </script>
 
 <template>
-  <Window v-bind="$props">
+  <DesktopWindow v-bind="$props">
     <video
       :src="filePath"
       :controls="!props.window.meta.noControls"
       :autoplay="props.window.meta.autoplay"
       :loop="props.window.meta.loop"
     />
-  </Window>
+  </DesktopWindow>
 </template>
 
 <style scoped lang="scss">
