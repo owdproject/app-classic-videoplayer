@@ -1,0 +1,11 @@
+{
+  "name": "app-classic-videoplayer",
+  "targets": {
+    "build": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "prepack"
+      }
+    }
+  }
+}
